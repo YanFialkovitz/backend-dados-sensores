@@ -97,7 +97,7 @@ const authenticateJWT = (req, res, next) => {
     }
 };
 
-// Rota para buscar todos os dados dos sensores (protegida por JWT)
+// Rota para buscar todos os dados dos sensores
 app.get('/dados-sensores', authenticateJWT, (req, res) => {
     if (isServicePaused) {
         return res.status(200).json({ message: 'O serviço está pausado. Nenhum dado será enviado.' });
